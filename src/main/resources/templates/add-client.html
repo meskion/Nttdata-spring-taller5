@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" charset="ISO-8859-1">
+<title>Add client</title>
+</head>
+<body>
+	<form action="#" th:action="@{/addclient}" th:object="${client}" method="post">
+    
+    <label for="name">Name</label>
+    <input type="text" th:field="*{name}" id="name" placeholder="Name">
+    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+    
+     <label for="firstSurname">Surname 1</label>
+    <input type="text" th:field="*{firstSurname}" id="firstSurname" placeholder="firstSurname">
+    <span th:if="${#fields.hasErrors('firstSurname')}" th:errors="*{firstSurname}"></span>
+    
+     <label for="secondSurname">Surname 2</label>
+    <input type="text" th:field="*{secondSurname}" id="secondSurname" placeholder="secondSurname">
+    <span th:if="${#fields.hasErrors('secondSurname')}" th:errors="*{secondSurname}"></span>
+    
+    
+    <label for="dni">DNI</label>
+    <input type="text" th:field="*{dni}" id="dni" placeholder="dni">
+    <span th:if="${#fields.hasErrors('dni')}" th:errors="*{dni}"></span>
+    
+    <input type="submit" value="Add Client">   
+</form>
+</body>
+</html>
